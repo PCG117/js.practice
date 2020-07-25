@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2.js写在head里面，在script标签中</title>
+	<script>
+		window.onload = function (){ 
+			alert('hello')
+		// 页面中所有的资源文件加载完成就会执行
+}
+		//注意：程序从上向下执行，所以先执行js，再执行body中的div
+	</script>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			background-color: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<div>javascript代码写在(head)里面：由于这时候网页主体（body）还未加载，所以这里适合放一些不是立即执行的自定义函数，立即执行的语句则很可能会出错（视浏览器而定）</div>
+</body>
+</html>
