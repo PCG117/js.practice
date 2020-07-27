@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15.分支结构练习-显示隐藏页面元素</title>
+</head>
+<body>
+	<input type="button" value="显示隐藏" id="btn">
+	<div id="pack" >
+		我是需要显示或隐藏的内容
+	</div>	
+</body>
+<script>
+
+var btn = document.getElementById('btn');
+var pack = document.getElementById('pack');
+		// 给按钮绑定点击事件
+	btn.onclick= function(){
+		//如果容器是隐藏状态，则显示
+	if (pack.style.display == 'none')
+		{
+		pack.style.display = 'block';
+		}
+		//如果容器是显示状态，则隐藏
+	else{
+		pack.style.display = 'none';
+		}
+	}
+</script>
+</html>
