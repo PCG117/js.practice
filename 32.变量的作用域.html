@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>32.变量的作用域</title>
+</head>
+<body>
+	
+</body>
+	<script>
+	var a=1;
+	function fn(){
+		console.log(a);//定义时a的值时1
+		b=3;
+	}
+	function show(){
+		var a=2;
+		fn();//执行时a的值是2
+	}
+	show();//show中的fn执行时a的值是2,fn在定义时a的值是1,所以结果是1
+	console.log(b);//在定义变量时，如果没有用var关键字定义，那么定义的变量为全局变量
+
+	</script>
+</html>
