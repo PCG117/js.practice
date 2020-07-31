@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>43.节点树练习-隐藏父元素</title>
+	<style>
+		#box1{
+			height: 200px;
+			width: 200px;
+			border: 1px solid #000;
+		}
+		#box2{
+			height: 100px;
+			width: 100px;
+			border: 1px solid blue;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+	<script>
+	// var box1=getElementById('box1')
+	var box2=document.getElementById('box2')
+	box2.onclick=function(){
+		this.previousElementSibling.style.display='none';
+	}
+	</script>
+</html>

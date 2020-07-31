@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>39.数组去重</title>
+</head>
+<body>
+	
+</body>
+	<script>
+
+	var arr=[22,44,55,31,44,77,53,33,53,55];
+	var arr2=[];
+	for(var i=0,len=arr.length;i<len;i++){
+		if(arr2.indexOf(arr[i])==-1){
+		// arr与新数组比较，新数组内如果没有相同元素，则推送进新数组当前元素
+			arr2.push(arr[i])
+		}
+	}
+	console.log(arr2)
+
+	var arr3=[];
+	for(var i=0,len=arr.length;i<len;i++){
+		if(arr.indexOf(arr[i])==i){
+		// arr数组内部自身比较，当前查找数值的下标是否与本轮中第一次查找到相同数值的下标一致；
+			arr3.push(arr[i])
+		}
+	}
+	console.log(arr3)
+	</script>
+</html>

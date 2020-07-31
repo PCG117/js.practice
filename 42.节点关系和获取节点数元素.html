@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>42.节点关系和获取节点数元素</title>
+    <style>
+		.box2{
+			position: relative;
+		}
+		.box3{
+			position: absolute;
+		}
+    </style>
+</head>
+<body>
+    <div id="box1">hello</div>
+    <div id="box">
+    	<div id="box2">box2</div>    
+    	<div id="box3">box3</div>    
+    	<div id="box4">box4</div>
+    </div>
+    <div class="box5">5
+    	<div id="box6">6</div>
+    </div>
+                
+</body>
+<script>
+	// var a = document.getElementById('box').firstChild;
+	// console.log(a)
+	var p = document.getElementById('box6');
+	console.log(p.parentNode)
+
+	var box2=document.getElementById('box3')
+	console.log(box2)
+</script>
+</html>
