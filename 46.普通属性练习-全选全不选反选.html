@@ -13,7 +13,7 @@
 	<input type="button" value="全选" id="button1">
 	<input type="button" value="全不选" id="button2">
 	<input type="button" value="反选" id="button3">
-	<ul>
+	<ul class="pack">
 		<li><input type="checkbox" value="" class="flower">桂花</li>
 		<li><input type="checkbox" value="" class="flower">月季</li>
 		<li><input type="checkbox" value="" class="flower">牡丹</li>
@@ -25,11 +25,35 @@
 	var button1=document.getElementById('button1')
 	var button2=document.getElementById('button2')
 	var button3=document.getElementById('button3')
-	var flower=document.querySelectorAll('flower')
-	btn1.onclick = function(){
-	for(var i=0,len=checkbox.length;i<len;i++){
-		flower.querySelectorAll[i]
-	}
-}
+	var flower=document.querySelectorAll('.pack input')
+	button1.onclick = function(){
+	for(var i=0,len=flower.length;i<len;i++){
+            if(!flower[i].checked){
+                // flower[i].checked = 'checked'
+                flower[i].checked = true
+            }
+        }
+    }
+    //全不选
+    button2.onclick = function(){
+        for(var i = 0,len = flower.length;i<len;i++){
+            if(flower[i].checked){
+                // flower[i].checked = ''
+                flower[i].checked = false
+            }
+        }
+    }
+    //反选
+    button3.onclick = function(){
+        for(var i = 0,len = flower.length;i<len;i++){
+            if(flower[i].checked){
+                // flower[i].checked = ''
+                flower[i].checked = false
+            }else{
+                // flower[i].checked = 'checked'
+                flower[i].checked = true
+            }
+        }
+    }    
 </script>
 </html>
