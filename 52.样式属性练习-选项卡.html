@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>52.样式属性练习-选项卡</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.pack{
+			width: 900px;
+			margin:60px auto;
+		}
+		li{
+			list-style: none;
+		}
+		.menu{
+			display:flex;
+			flex-direction: row;
+			border-bottom: 1px solid #F9002b;
+			background-color: #d0d0d0;
+		}
+		.menu li{
+			cursor: pointer;
+            width: 100px;
+            line-height: 40px;
+            text-align: center;
+		}
+		.menu li:hover{
+            color:#F9002B;
+        }
+        .menu li.active{
+            color: #fff;
+            background-color: #F9002B;
+        }
+        .content li{
+            display: none;
+            line-height: 400px;
+            text-align: center;
+            font-size: 60px;
+        }
+	</style>
+</head>
+<body>
+	<div class="pack">
+		<ul class="menu">
+			<li class="active">商品介绍</li>
+			<li>规格与包装</li>
+			<li>售后保障</li>
+			<li>商品评价</li>
+			<li>商品问答</li>
+		</ul>
+		<ul class="content">
+			<li class="avtive">商品介绍的详细信息</li>
+			<li>规格与包装的详细信息</li>
+			<li>售后保障的详细信息</li>
+			<li>商品评价的详细信息</li>
+			<li>商品问答的详细信息</li>
+		</ul>
+	</div>
+</body>
+	<script>
+		    var tabs = document.querySelectorAll('.menu li')
+    var contents = document.querySelectorAll('.content li')
+    var len = tabs.length;
+    for(var i  = 0;i<len;i++){
+        tabs[i].index = i
+        tabs[i].onclick = function(){
+            for(var j = 0;j<len;j++){
+                tabs[j].className = ''
+                contents[j].style.display = 'none'
+            }
+            this.className = 'active'           
+            contents[this.index].style.display = 'block'
+        }
+    }
+	</script>
+</html>

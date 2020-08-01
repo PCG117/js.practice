@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>50.显示隐藏页面元素</title>
+	
+</head>
+<body>
+	<input type="button" value="显示或隐藏" id="btn">
+	<div id="cube">文字</div>	
+</body>
+<script>
+var btn=document.getElementById('btn')
+var cube=document.getElementById('cube')
+btn.onclick=function(){
+	if (cube.style.display=='none') {
+		cube.style.display='block'
+	}else{
+		cube.style.display='none'
+	}
+}
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>56.克隆节点</title>
+</head>
+<body>
+	<input type="button" value="点我复制内容" id="btn">
+	<div id="pack">
+		<div id="content">内容</div>
+	</div>
+</body>
+<script>
+var pack=document.getElementById('pack')
+var btn=document.getElementById('btn')
+var content=document.getElementById('content')
+btn.onclick=function(){
+	var pack1=content.cloneNode(true)
+	pack.appendChild(pack1)
+}
+</script>
+</html>

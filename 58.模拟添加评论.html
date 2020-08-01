@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>58.模拟添加评论</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+    var subBtn = document.getElementById('sub-btn') //获取节点-发布按钮
+    var text = document.getElementById('text') //获取节点-输入框
+    var contents = document.getElementById('contents') //获取节点-评论区
+    subBtn.onclick = function(){ 
+    //创建一个点击事件函数-设置点击上传按钮后所发生的事
+       var val = text.value //获取输入框节点输入的text.value
+
+       var elemLi = document.createElement('li') //创建新节点-新建一行li节点
+       var elemSpan = document.createElement('span') 
+       //创建新节点-在新建li节点中新建一个span节点
+       elemSpan.innerHTML = val 
+       //将新建的span节点的html部分赋值为输入框内的text.value
+       elemLi.appendChild(elemSpan) //将span节点追加到li元素(父节点)的最后面
+
+       var btnSpan = document.createElement('span')
+       btnSpan.innerHTML = '删除'
+       btnSpan.className = 'del-btn'
+
+       btnSpan.onclick = function(){
+            contents.removeChild(elemLi)
+       }
+
+       elemLi.appendChild(btnSpan)
+
+       contents.insertBefore(elemLi,contents.firstChild)
+
+       text.value = ''
+    }
+</script>

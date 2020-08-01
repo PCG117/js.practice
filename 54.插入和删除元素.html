@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>54.插入和删除元素</title>
+</head>
+<body>
+	<input type="button" value="点击插入或删除" id="btn">
+	<ul id="pack">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script>
+var pack=document.getElementById('pack')
+var btn=document.getElementById('btn')
+btn.onclick=function(){
+	var elem1=pack.firstElementChild
+	var elem2=pack.lastElementChild
+	//插入
+	pack.insertBefore(elem2,elem1)
+	//删除
+	// pack.removeChild(elem1)
+}
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>53.节点操作-生成和追加节点</title>
+	<style>
+		ul{
+			border: 1px solid pink;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="点击移动" id="btn">
+	<ul id="pack1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<ul id="pack2">
+
+	</ul>
+</body>
+<script>
+var pack1=document.getElementById('pack1')
+var pack2=document.getElementById('pack2')
+var btn=document.getElementById('btn')
+btn.onclick=function(){
+	var elem=pack1.firstElementChild
+	pack2.appendChild(elem)
+}
+</script>
+</html>
