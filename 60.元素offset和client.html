@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>60.元素offset和client</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#father{
+		border: 1px solid #000;
+		width: 500px;
+		height: 500px;
+		position: relative;
+		padding: 40px;
+	}
+	#son{
+		position: absolute;
+		border: 20px solid #000	;
+		width: 300px;
+		height: 300px;
+	}
+</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+var son=document.getElementById('son')
+var father=document.getElementById('father')
+var a=son.offsetParent
+console.log(a)
+var b=son.offsetLeft
+console.log(b)
+var c=son.offsetWidth
+console.log(c)
+</script>
+</html>
