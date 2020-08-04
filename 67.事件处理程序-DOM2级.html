@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>67.事件处理程序-DOM2级</title>
+</head>
+<body>
+	<div id="box">
+		测试文字
+	</div>
+</body>
+	<script>
+	var box=document.getElementById('box')
+	function btn(){
+		this.style.color='red'
+	}
+	function wz(){
+		this.style.fontSize='20px'
+	}
+	box.addEventListener('click',btn,false);
+	box.addEventListener('click',wz,false);
+	</script>
+</html>

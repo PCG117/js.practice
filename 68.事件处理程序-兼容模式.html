@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>68.事件处理程序-兼容模式</title>
+
+</head>
+<body>
+		<div id="box">
+		测试文字
+	</div>
+</body>
+	<script>
+	function addHandler(elem,'click',handler)
+		if(elem,addEventListener){
+			elem.addEventListener(type,handler,false)
+		}
+		else if(elem.attachEvent){
+			elem.attachEvent('on'+type,handler)
+		}
+		else{
+			elem['on'+type]=handler
+		}
+	function removeHandler(elem,type,handler){
+    if(elem.removeEventListener){
+        elem.removeEventListener(type,handler,false)
+    }
+    else if(elem.detachEvent){
+        elem.detachEvent('on'+type,handler)
+    }
+    else{
+        elem['on'+type] = null
+    }
+	}
+
+	var elem=document.getElementById('box')
+	function btn(){
+		this.style.color='red'
+	}
+	function wz(){
+		this.style.fontSize='20px'
+	}
+	addEventListener('click',btn,false);
+	addEventListener('click',wz,false);
+	</script>
+</html>
