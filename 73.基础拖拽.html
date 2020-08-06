@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>73.基础拖拽</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#box{
+		width: 150px;
+		height: 150px;
+		background-color: purple;
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+	<script>
+	var box=document.getElementById('box')
+	box.onmousedown=function(ev){
+		var surplusX=ev.pageX-box.offsetLeft
+		var surplusY=ev.pageY-box.offsetTop
+
+	document.onmousemove=function(ev){
+		var l=ev.pageX-surplusX
+		var t=ev.pageY-surplusY
+		box.style.left= l+'px'
+		box.style.top= t+'px'
+	}
+	document.onmouseup=function(){
+		document.onmouseup=null
+		document.onmousemove=null
+	}
+}
+	</script>
+</html>

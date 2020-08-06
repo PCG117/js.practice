@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>79.下拉菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.pack{
+			width: 300px;
+			margin:10px auto;
+		}
+		#menu{
+			width: 151px;
+			height:20px; 
+			border: 1px solid #000;
+			cursor: pointer;
+
+		}
+
+		}
+		#detail{
+			width: 150px;
+			height: 200px;
+			border: 1px solid #000;
+			margin-top: 22px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="pack">
+		<div id="menu"></div>
+		<div id="detail">
+		</div>
+	</div>
+</body>
+	<script>
+		var menu= document.getElementById('menu')
+		var detail=document.getElementById('detail')
+
+		menu.onclick=function(ev){
+			detail.style.display='block'
+			ev.stopPropagation()
+		}
+
+		document.onclick=function(){
+			detail.style.display='none'
+		}
+
+		detail.onclick=function(ev){
+			ev.stopPropagation()
+		}
+	</script>
+</html>

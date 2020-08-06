@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>80.模态框登录</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		width: 2000px;
+		height: 2000px;
+	}
+	#login-menu{
+		width: 300px;
+		height: 200px;
+		border: 1px solid #000;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		background-color: white;
+		z-index: 99
+	}
+		
+	.mask{
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.3);
+	}
+
+</style>
+</head>
+<body>
+	<input type="button" value="登陆" id="login">
+	<div id="login-menu" style="display:none">
+	
+		<div>
+			<input type="text">用户名
+		</div>
+		<div>
+			<input type="password">密码
+		</div>
+		<div>
+			<span><button>登陆</button></span>
+			<span><button>注册</button></span>
+		</div>
+		
+	</div>
+	<div class="mask" id="cover" style="display:none"></div>
+</body>
+	<script>
+	var login=document.getElementById('login')
+	var loginMenu=document.getElementById('login-menu')
+	var cover=document.getElementById('cover')
+	login.onclick=function(ev){
+		loginMenu.style.display='block';
+		cover.style.display='block';
+		ev.stopPropagation()
+	}
+	document.onclick=function(){
+		loginMenu.style.display='none';
+		cover.style.display='none';	
+	}
+	loginMenu.onclick=function(ev){
+		ev.stopPropagation()
+	}
+	</script>
+</html>

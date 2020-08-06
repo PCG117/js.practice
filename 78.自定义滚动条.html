@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>78.自定义滚动条</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #pack{
+        	width: 500px;
+        	height: 500px;
+        	margin:50px auto;
+        	position: relative;
+
+        }
+        #content-wrap{
+        	width: 200px;
+        	height: 300px;
+        	position: absolute;
+        	border:1px solid #000;
+        	/*overflow: hidden;*/
+        }
+		#content{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+        #wrap{
+            width: 25px;
+            height: 302px;
+            background-color: gray;
+            position: absolute;
+            left: 202px;
+        }
+        #box{
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+	<div id="pack">
+	<div id="content-wrap">
+		<div id="content">
+			北京时间2020年8月3日凌晨2点53分左右，SpaceX载人龙飞船成功溅落在大西洋面上，这是龙飞船首次执行载人飞行任务，这也标志着世界商业载人航天新时代的开始。（注：在海洋上的降落称为“溅落”，对应英文splashdown）。本次试飞主要是为了对载人龙飞船进行各项验证，通过评估之后，龙飞船将正式执行NASA与SpaceX签订的“商业载人项目”（Commercial Crew Program），预计首次正式载人飞行将在今年9月份进行，届时将有四名宇航员飞赴国际空间站。
+		</div>
+		</div>
+    	<div id="wrap">
+        <div id="box"></div>
+    	</div>
+    </div>
+</body>
+<script>
+	var wrap = document.getElementById('wrap')
+    var box = document.getElementById('box')
+    var contentWrap = document.getElementById('content-wrap')
+    var content=document.getElementById('content')
+    box.onmousedown = function(ev){
+    
+        var disY = ev.pageY - box.offsetTop
+
+        document.onmousemove = function(ev){
+            var t = ev.pageY - disY
+            var maxH=wrap.offsetHeight-box.offsetHeight
+            if(t < 0){
+                t = 0
+            }else if(t > maxH){
+                t = maxH
+            }
+
+            box.style.top = t + 'px'
+
+             var percentY = t / maxH
+            content.style.top = (contentWrap.offsetHeight - content.offsetHeight) * percentY + 'px'
+        }
+
+        document.onmouseup = function(){
+            document.onmousemove = null
+             document.onmouseup = null
+        }
+    }
+</script>
+</html>

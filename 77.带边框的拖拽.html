@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>77.带边框的拖拽</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#box{
+		width: 150px;
+		height: 150px;
+		background-color: purple;
+		position: absolute;
+	}
+	#box1{
+		width:150px;
+		height:150px;
+		margin:1px dashed #000;
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="box1"></div>
+</body>
+	<script>
+	var box=document.getElementById('box')
+	var box1=document.getElementById('box1')
+	document.body.appendChild(box)
+
+	box.onmousedown=function(ev){
+		var surplusX=ev.pageX-box.offsetLeft
+		var surplusY=ev.pageY-box.offsetTop
+	document.onmousemove=function(ev){
+		var l=ev.pageX-surplusX
+		var t=ev.pageY-surplusY
+
+            if(l < 0){
+                l = 0
+            }else if(l > window.innerWidth + window.pageXOffset - elem.offsetWidth){
+                l = window.innerWidth + window.pageXOffset - elem.offsetWidth
+            }
+
+            if(t < 0){
+                t = 0
+            }else if(t > window.innerHeight + window.pageYOffset - elem.offsetHeight){
+                t = window.innerHeight + window.pageYOffset - elem.offsetHeight
+            }
+	
+		box.style.left= l+'px'
+		box.style.top= t+'px'
+	}
+	document.onmouseup=function(){
+		 document.body.removeChild(box)
+		 
+		document.onmouseup=null
+		document.onmousemove=null
+	}
+}
+	</script>
+</html>

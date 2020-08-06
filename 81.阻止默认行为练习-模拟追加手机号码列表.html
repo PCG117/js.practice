@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>81.阻止默认行为练习-模拟追加手机号码列表</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.box{
+		margin: 20px auto;
+		border: 1px dashed #000;
+		width: 300px;
+/*		height: 100px;*/
+	}
+	li{
+		border-bottom:1px dashed #000;
+		line-height: 25px;
+		margin-top: 10px;
+		list-style: none;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+	
+		<input type="text" placeholder="请输入您的手机号：" id="num"><span><button id="btn">添加</button></span>
+
+
+		<ul id="list">
+			
+		</ul>
+
+	</div>
+</body>
+<script>
+var num=document.getElementById('num')
+var btn=document.getElementById('btn')
+var list=document.getElementById('list')
+btn.onclick=function(){
+	var val=num.value
+	var elem=document.createElement('li')
+	elem.innerHTML=val
+	list.appendChild(elem)
+	num.value=''
+}
+	num.onkeydown=function(ev){
+		var Code=ev.keyCode
+		if ((Cod<48||Code>57)&& Code != 8 && Code != 37 && Code != 39) {
+			ev.preventDefault()
+		}
+		if(keyCode == 13 && ev.ctrlKey){
+        	btn.onclick()
+        }
+	}
+</script>
+</html>
