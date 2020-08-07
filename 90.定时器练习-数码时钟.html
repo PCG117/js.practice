@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>90.定时器练习-数码时钟</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			height: 80vh;
+			align-items: center;
+		}
+		#timer{
+			color: #fff;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">15:51:31</div>
+</body>
+<script>
+var time=document.getElementById('timer')
+	function toStr(num){
+		return num<10?'0'+num:''+num
+	}
+var clock=function(){
+	var today=new Date()
+
+	var hour=today.getHours()
+	var minute=today.getMinutes()
+	var second=today.getSeconds()
+	time.innerHTML=toStr(hour)+':'+toStr(minute)+':'+toStr(second);
+}
+setInterval(clock,1000)
+clock()
+</script>
+</html>

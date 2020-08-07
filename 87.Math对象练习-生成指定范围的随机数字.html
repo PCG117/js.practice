@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>87.Math对象练习-生成指定范围的随机数字</title>
+</head>
+<body>
+	
+</body>
+<script>
+var a=prompt('输入第一个数字：')
+var b=prompt('输入第二个数字：')
+function randomnum(min,max){
+	return	Math.round(min+(max-min)*Math.random());
+}
+console.log(randomnum(a,b))
+</script>
+</html>

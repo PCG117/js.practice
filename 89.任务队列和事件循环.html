@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>89.任务队列和事件循环</title>
+</head>
+<body>
+	<input type="button" value="点我执行" id="btn">
+</body>
+<script>
+var btn=document.getElementById('btn');
+var i=0;
+
+btn.onclick=function(){
+	i++;
+	console.log(i)
+}
+
+setTimeout(function(){
+	console.log(i)
+},2000)
+
+i++;
+
+</script>
+</html>

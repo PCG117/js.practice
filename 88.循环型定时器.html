@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>88.循环型定时器</title>
+</head>
+<body>
+	<button id="btn" value="关闭定时器">关闭定时器</button>
+</body>
+<script>
+	var btn=document.getElementById('btn')
+	var i=0
+	var a=setInterval(function(){
+		i++
+		console.log("hello,it's me"+i)
+	},1000)
+	
+
+	btn.onclick=function(){
+		clearInterval(a)
+	}
+</script>
+</html>
