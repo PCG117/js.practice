@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>97.js动画-移动元素-动画结束的条件</title>
+		<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+#box{
+    position: absolute;
+    top:50px;
+    left:0px;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.line{
+    width: 1px;
+    height: 600px;
+    background-color: #000;
+    position: absolute;
+    top:50px;
+    left:400px;
+}
+	</style>
+</head>
+<body>
+	<button id="btn">开始动画</button>
+    <div id="box"></div>
+    <div class="line"></div>
+</body>
+<script>
+var box=document.getElementById('box')
+var btn=document.getElementById('btn')
+var time=0;
+
+btn.onclick=function(){
+
+	clearInterval(time)
+    var direct=0
+	time=setInterval(function(){
+    if (box.offsetLeft>400) {
+        direct=-9
+    }else{
+        direct=9
+    }
+	if (Math.abs(400 - box.offsetLeft) < Math.abs(direct)) {
+			box.style.left = '400px';
+			clearInterval(time);
+	}else{
+		box.style.left=box.offsetLeft+direct+'px';
+		}
+	},20)
+}
+</script>
+</html>

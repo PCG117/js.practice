@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>93.js动画-移动元素</title>
+	<style>
+	*{
+    margin: 0;
+    padding: 0;
+}
+#box{
+    position: absolute;
+    top:50px;
+    left:0;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+	</style>
+</head>
+<body>
+	  <div id="box"></div>
+</body>
+	<script>
+	var box=document.getElementById('box')
+	var time=0;
+	time=setInterval(function(){
+		if (box.offsetLeft==300) {
+			clearInterval(time);
+		}else{
+			box.style.left=box.offsetLeft+5+'px'
+		}
+	},20)
+	</script>
+</html>

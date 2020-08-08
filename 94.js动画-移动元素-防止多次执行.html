@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>94.js动画-移动元素-防止多次执行</title>
+	<style>
+		*{
+    margin: 0;
+    padding: 0;
+}
+#box{
+    position: absolute;
+    top:50px;
+    left:0;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.line{
+    width: 1px;
+    height: 600px;
+    background-color: #000;
+    position: absolute;
+    top:50px;
+    left:400px;
+}
+	</style>
+</head>
+<body>
+	    <button id="btn">开始动画</button>
+    <div id="box"></div>
+    <div class="line"></div>
+</body>
+<script>
+var box=document.getElementById('box')
+var btn=document.getElementById('btn')
+var time=0;
+bnt.onclick=function(){
+	clearInterval(time)
+	time=setInterval(function(){
+		if (box.offsetLeft==300) {
+			clearInterval(time);
+		}else{
+			box.style.left=box.offsetLeft+5+'px'
+		}
+	},20)
+}
+</script>
+</html>
