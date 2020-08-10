@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>107.apply改变this指向</title>
+</head>
+<body>
+	
+</body>
+<script>
+var tom = {
+    name:"Tom"
+}
+function sayHi(age,city) {
+    console.log("I am "+this.name+", I am " + age + " years old and I am from "+ city)
+}
+
+var name = "Leo"
+
+sayHi(18,"BeiJing")
+sayHi.apply(tom,[18,"BeiJing"])
+</script>
+</html>

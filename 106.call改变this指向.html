@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>106.call改变this指向</title>
+</head>
+<body>
+	
+</body>
+<script>
+// fn.call(改变后的this对象,参数1,参数2...)
+var tom = {
+    name:"Tom"
+}
+function sayHi(age,city) {
+    console.log("I am "+this.name+", I am " + age + " years old and I am from "+ city)
+}
+
+var name = "Leo"
+
+sayHi(18,"BeiJing")
+sayHi.call(tom,18,"BeiJing")
+</script>
+</html>

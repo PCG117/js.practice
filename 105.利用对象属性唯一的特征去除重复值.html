@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>105.利用对象属性唯一的特征去除重复值</title>
+</head>
+<body>
+	
+</body>
+<script>
+arr=[1,1,2,3,4,5,5,6,7]
+function uniqueArray(arr){
+var result=[];
+var obj={};
+for (var i = 0,len=arr.length; i<len; i++) {
+	obj[arr[i]]=i;
+}
+for(var attr in obj){
+	result.push(attr);
+}
+return result;
+}
+// uniqueArray(arr=[1,1,2,3,4,5,5,6,7])
+// console.log(num.a)
+</script>
+</html>
