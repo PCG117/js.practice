@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>120.继承方法演化四</title>
+</head>
+<body>
+	
+</body>
+<script>
+function 子类(属性1,属性2,属性3){
+    父类.call(this,属性1,属性2);//属性的继承
+    this.属性3 = 属性3; //子类的属性
+}
+//方法的继承
+子类.prototype = Object.create(父类.prototype);
+//添加一个不可枚举的子类构造函数
+console.log(子类.prototype)
+Object.defineProperty(子类.prototype,'constructor',{
+    value:子类
+})
+子类.prototype.方法 = function(){} //子类的方法
+</script>
+</html>

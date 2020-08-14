@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>116.对象的属性</title>
+</head>
+<body>
+	
+</body>
+<script>
+//定义单个属性
+Object.defineProperty(对象,属性名,{
+    value:属性值,
+    enumerable:true,//是否可以枚举,默认是false
+    writable:true,//是否可写(赋值),默认是false
+    configurable:true//是否可删除,是否可以修改属性的权限，默认是false
+});
+
+//定义多个属性
+Object.defineProperties(对象,{
+    属性名1:{value:属性值,writable:true},
+    属性名2:{value:属性值,enumerable:true},
+    属性名3:{value:属性值}
+});
+</script>
+</html>

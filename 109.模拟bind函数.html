@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>109.模拟bind函数</title>
+</head>
+<body>
+	
+</body>
+<script>
+var tom = {
+    name:"Tom"
+}
+Function.prototype.myBind = function(context){
+    var context = context || window
+    var fn = this
+    var args = [...arguments].slice(1)
+    // console.log(args)
+    return function(){
+        return fn.apply(context,args)
+    }
+}
+function sayHi(age,city) {
+    console.log("I am "+this.name+", I am " + age + " years old and I am from "+ city)
+}
+sayHi.myBind(tom,18,"BeiJing")()
+</script>
+</html>

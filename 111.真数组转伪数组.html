@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>111.真数组转伪数组</title>
+</head>
+<body>
+	
+</body>
+<script>
+var arr = [11,22,44]
+
+var likeArr = {}
+
+var len = [].push.apply(likeArr,arr)
+
+console.log(likeArr) //{0: 11, 1: 22, 2: 44, length: 3}
+</script>
+</html>

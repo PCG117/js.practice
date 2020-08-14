@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>117.继承方法演化一</title>
+</head>
+<body>
+	
+</body>
+<script>
+function Person(name,age){
+	this.name=name
+	this.age=age
+}
+Person.prototype={
+	constructor:Person,
+	showName:function(){
+		console.log('我是'+this.name)
+	}
+}
+var p1=new Person('Tom',18)
+function Student(name,age,major){
+	Person.call(this,name,age)
+	this.major=major
+}
+Student.prototype=Person.prototype
+Student.prototype.showMajor=function(){
+	console.log('我来自'+ this.major)
+}
+var s1=new Student('peter','25','computer')
+s1.showName()
+s1.showAge()
+s1.showMajor()
+p1.showMajor()
+</script>
+</html>

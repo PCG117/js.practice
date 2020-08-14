@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>108.模拟call改变this指向函数</title>
+</head>
+<body>
+	
+</body>
+	<script>
+	var peter={
+		name:'peter'
+	}	
+
+	function sayHi(age,city){
+		console.log('I am'+this.name+',I am'+age+" years old and I am from "+ city)
+	}
+	
+	Function.prototype.myCall=function(context){
+		var context=context||window
+		context.fn=this
+		var args = [...arguments].slice(1)
+    	var result = context.fn(...args)
+    delete context.fn
+
+    return result
+	}
+
+	sayHi.myCall(peter)
+	</script>
+</html>
