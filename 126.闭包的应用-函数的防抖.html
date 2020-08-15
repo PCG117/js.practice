@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>126.闭包的应用-函数的防抖</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//fn是我们需要执行的事件回调,delay是每次推迟执行的等待时间(单位为毫秒)
+function debounce(fn,delay){
+    var timer = 0;
+    //返回一个函数
+    return function(){
+        if(timer){
+            //每次事件被触发时,清除之前的旧定时器
+            clearTimeout(timer);            
+        }
+        //开启一个新的定时器从新开始等待
+        timer = setTimeout(fn,delay)
+    }
+}
+var i = 0
+var fn = debounce(function(){
+    console.log("第"+(++i)+"次触发事件")
+}, 1000)
+
+document.addEventListener('scroll', fn,false)
+</script>
+</html>
