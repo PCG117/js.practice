@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>128.闭包的作用-偏函数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function generateEmployee(city){
+    return function(department,name){
+        return city + department + name
+    }
+}
+//生成北京的员工函数
+var generateBeijingEmployee = generateEmployee('北京')
+
+generateBeijingEmployee('销售部','张三')//北京销售部张三
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>133.工厂模式</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Student(){
+
+    }
+
+    function Worker(){
+
+    }
+
+    function Teacher(){
+
+    }
+
+    function factory(type){
+        switch(type){
+            case 'student':
+                return new Student()
+                break
+            case 'worker':
+                return new Worker()
+                break
+            case 'teacher':
+                return new Teacher()
+                break
+            default:
+                return null                                  
+        }
+    }
+
+    var s =  factory('student')//生成一个Student的实例
+</script>
+</html>

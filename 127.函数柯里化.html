@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>127.函数柯里化</title>
+</head>
+<body>
+	
+</body>
+<script>
+function generateEmployee(city){
+    return function(department){
+        return function(name){
+            return city + department + name
+        }
+    }
+}
+//生成北京的员工函数
+var generateBeijingEmployee = generateEmployee('北京')
+
+generateBeijingEmployee('销售部')('张三')//北京销售部张三
+
+//生成北京销售部的员工函数
+var generateBeijingSellEmployee = generateEmployee('北京')('销售部')
+
+generateBeijingSellEmployee('张三')//北京销售部张三
+
+//直接生成一个员工
+generateEmployee('北京')('销售部')('张三')//北京销售部张三
+</script>
+</html>

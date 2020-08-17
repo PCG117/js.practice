@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>132.小闭包作用-封装构造函数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype = {
+        constructor:Person,
+        LEGS:2,
+        showName:function(){
+            console.log('I am '+this.name);
+        },
+        showAge:function(){
+            console.log('I am '+this.age + ' years old');
+        }
+    }
+    w.Person = Person;          
+})(window); 
+
+var p1 = new Person('Tom',18);  
+p1.showAge();
+p1.showName();
+</script>
+</html>
