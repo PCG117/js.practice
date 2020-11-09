@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>140.Ajax模拟练习-注册</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#regist{
+			margin:50px auto;
+		}
+		#msg{
+			color: red;
+		}
+		.err-input{
+			border-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="regist">
+		<span>用户名</span><input type="text" id="username">
+		<div id="msg" >此用户名已被注册，请更换一个</div>
+		<span>密码</span><input type="password" id="psw">
+	</div>
+</body>
+<script src="139.ajax.js"></script>
+	<script>
+	var usernameElem=document.getElementById('username')
+	var msgElem=document.getElementById('msg')
+	usernameElem.onblur=function(){
+		var val=this.value
+		if(val){
+			ajax({
+				url:'http://127.0.0.1:3000/checkUsername',
+				data:{
+					username:val
+				},
+				success:function(data){
+					var exist=data.data.exist
+					if(exist==1){
+						usernameElem.className='err-input'
+						msgElem.style.display='block'
+					}
+				}
+			})
+		}
+	}
+	usernameElem.onfocus=function(){
+		usernameElem.className=''
+		msgElem.style.display='none'
+	}
+	</script>
+</html>

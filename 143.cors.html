@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>143.cors</title>
+</head>
+<body>
+	
+</body>
+<script>	
+	btn1.onclick = function(){
+    ajax({
+        method:'GET',
+        url:'http://127.0.0.1:3000',
+        data:{name:"Tom",age:18,city:"北京"},
+        success:function(data){
+            console.log(data)
+        }
+    })       
+}
+</script>
+</html>

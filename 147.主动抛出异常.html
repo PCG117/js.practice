@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>147.主动抛出异常</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function sum(n1,n2){
+    var n1 = parseInt(n1)
+    var n2 = parseInt(n2)
+    if(isNaN(n1) || isNaN(n2)){
+        // throw 'arguments must be number'
+        throw new Error('arguments must be number')
+    }
+    return n1 + n2 
+}
+
+var s = sum('a','b')
+console.log(s)
+</script>
+</html>

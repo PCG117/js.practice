@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>146.异常处理</title>
+</head>
+<body>
+	
+</body>
+<script>
+var json='age=13'
+try{
+	var obj=JSON.parse(json)
+}catch(e){
+	console.log(e.message)
+	obj={}
+}finally{
+	console.log('finally...')
+}
+console.log(obj)
+console.log('do sth...')
+</script>
+</html>

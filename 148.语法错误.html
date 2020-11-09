@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>148.语法错误</title>
+</head>
+<body>
+	
+</body>
+<script>
+//1 输入中文指令
+var a = 1；//Uncaught SyntaxError: Invalid or unexpected token
+//2 少打,漏打,多打
+var b = ;//Uncaught SyntaxError: Unexpected token ;
+if(true){{}//Uncaught SyntaxError: Unexpected end of input
+//3 变量名不合法
+var class = 'abc';//Uncaught SyntaxError: Unexpected token =
+//4 语句写错
+functionn test(){}//Uncaught SyntaxError: Unexpected identifier
+</script>
+</html>

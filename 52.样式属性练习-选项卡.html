@@ -67,6 +67,7 @@
     for(var i  = 0;i<len;i++){
         tabs[i].index = i
         tabs[i].onclick = function(){
+        	    console.log(this)
             for(var j = 0;j<len;j++){
                 tabs[j].className = ''
                 contents[j].style.display = 'none'

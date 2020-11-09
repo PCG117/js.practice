@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>145.storage</title>
+</head>
+<body>
+	
+</body>
+<script>
+ console.log(localStorage)
+//  _proto__: Storage
+// clear: ƒ clear()
+// getItem: ƒ getItem()
+// key: ƒ key()
+// length: (...)
+// removeItem: ƒ removeItem()
+// setItem: ƒ setItem()
+// constructor: ƒ Storage()
+// Symbol(Symbol.toStringTag): "Storage"
+// get length: ƒ length()
+// __proto__: Object
+	localStorage.setItem('test1','test1-content')
+	localStorage.setItem('test2',{
+		name:'peter'
+	})
+	var obj={
+		name='peter'
+	}
+	localStorage.setItem('test3',JSON.stringify(obj))
+
+	console.log(localStorage.getItem('test1'))
+	console.log(localStorage.getItem('test2'))
+	console.log(JSON.parse(localStorage.getItem('test3')))
+
+	for(var i = 0,len = localStorage.length;i<len;i++){
+    var key = localStorage.key(i)
+    console.log(key+'='+localStorage.getItem(key))
+}
+</script>
+</html>

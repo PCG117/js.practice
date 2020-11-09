@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>150.逻辑错误</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">执行运算</button>
+</body>
+<script>
+var txt=document.getElementById('txt')
+var btn=document.getElementById('btn')
+btn.onclick=function(){
+	var val=txt.value
+	try{
+		if(isNaN(parseInt(val))){
+			throw new Error('not parse to a number')
+		}
+		var total=sum(parseInt(val));
+		handleNum(total);
+	}catch(e){
+		console.log(e);
+	}finally{
+		console.log('finally...');
+	}
+}
+debugger;
+function sum(num){
+	var result=0;
+	for(var i=1;i<num;i++){
+		result +=i;
+	}
+	return result;
+}
+function handleNum(num){
+	console.log(num*10)
+}
+</script>
+</html>
